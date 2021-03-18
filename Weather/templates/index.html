@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="csrf_token" content="{{ csrf_token }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    {% comment %} <script src="./index.js" defer></script> {% endcomment %}
+    <title>Simple Weather App</title>
+</head>
+<body>
+    <div class="card">
+        <form id="form" method="POST" action="result"> 
+         {% csrf_token %}
+        <div class="search">
+            <input type="text" class="search-bar" placeholder="Enter the city" value="Shimla" name="city">
+        <input type="submit" class="submit-but" value="Submit"> 
+           
+        </div>
+        </form> 
+        
+    <div class="weather">
+        <h2 class="city">Weather in Shimla</h2>
+        <div class="temp">50C</div>
+        <img src="" alt="" class="icon">
+        <div class="description">Cloudy</div>
+        <div class="humidity">Humidity:60%</div>
+        <div class="wind">Wind-speed:6.4km/h</div>
+    </div>
+    </div>
+    
+</body>
+</html>
